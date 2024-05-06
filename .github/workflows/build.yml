@@ -1,10 +1,16 @@
+name: Node Continuoud Integration
 on: push
 jobs: 
-  first-job:
+  builb-node:
+    name: Build and run Node project
     runs-on: ubuntu-latest
     container: node:17.6.0
     steps:
       - run: node --version
+        name: Check Node version
       - run: npm --version
+        name: Check npm version
       - uses: actions/checkout@v3
+        name: Checkout code from GitHub
       - run: node app.js
+        name: Run Node project
